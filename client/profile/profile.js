@@ -1,9 +1,9 @@
 angular.module('doggyBook.profile', [])
 
-.controller('ProfController', function ($scope, Prof) {
-  // userID identifies the given user
-  $scope.userID = {};
-  // data object stores all of the info for the user from the db
+.controller('ProfController', function ($scope) {
+  // Profiles is a factory in services.js
+  $scope.userID = {}
+  // grab userID from either landing page or search page
   $scope.data = {};
 
   var profileRender = function () {
