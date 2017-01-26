@@ -20,11 +20,12 @@
     <button type='submit'> Submit</button>
   </form>
   <br />
-  <div>
-    <ul>
-      <li ng-repeat="users in usersAry|filter:search">
-        {{data.users}}
-      </li>
+  <div class='results'>
+    <ul ng-repeat="users in results|filter:search">
+      <li>{{users.username}}</li>
+      <li>{{users.imgurl}}</li>
+      <li>{{users.zip}}</li>
+      <li>{{users.price}}</li>
     </ul>
   </div>
 </div>

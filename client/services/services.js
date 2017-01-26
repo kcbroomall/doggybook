@@ -66,12 +66,11 @@ angular.module('doggyBook.services', [])
 
 .factory('Search', function ($http, $location, $window) {
 
-  var getAllUsers = function (query) {
+  var getAllUsers = function () {
     //this function should query all profs from DB, send to search.html and
     return $http({
       method: 'GET',
-      url: '/api/search',
-      data: query
+      url: '/api/search'
     })
     .then(function (resp) {
       return resp;
