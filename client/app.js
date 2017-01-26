@@ -21,7 +21,7 @@ angular.module('doggyBook', [
       templateUrl: 'auth/signup.html',
       controller: 'AuthController'
     })
-    .when('/profile', {
+    .when('/profiles/', {
       templateUrl: 'profile/profile.html',
       controller: 'ProfController',
       authenticate: true
