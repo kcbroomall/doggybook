@@ -1,9 +1,25 @@
 <div id='signin'>
-  <h1>signin</h1>
-  <form name="signinForm" ng-submit='signin()'>
-    <input type='text' ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
-    <button>signin</button>
-  </form>
-  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+  <div class="row vertical-offset">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class='panel-title'> Sign in to DoggyBook</h3>
+        </div>
+        <div class="panel-body">
+          <form name="signinForm" ng-submit='signin()' id='signinForm'>
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control" placeholder="Username" type='text' ng-model='user.username' />
+              </div>
+              <div class='form-group'>
+                <input class="form-control" placeholder="Password" type='password' ng-model='user.password' />
+              </div>
+            </fieldset>
+            <button class="btn btn-lg btn-success btn-block">signin</button>
+          </form>
+          <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

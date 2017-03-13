@@ -1,31 +1,36 @@
 <div id='profile'>
-  <h1>Profile</h1>
   <!-- nav below only includes landing & search; consider adding signout & nav to your profile -->
-  <nav class="navigation">
-    <ul>
-      <li>
-        <a href="#/landing">Links</a>
-      </li>
-      <li>
-        <a href="#/search">Shorten</a>
-      </li>
-    </ul>
-  </nav>
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <a href="#/landing"><button class="btn btn-info">Head Back to the Home Page!</button></a>
+      </div>
+      <div class="col-md-4">
+        <a href="#/search"><button class="btn btn-info">Make a Search!</button></a>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-info" ng-click="signout()">Sign Out</button>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <img id="profile-img" src={{profile.imgurl}} />
+      </div>
 
-<!-- the div below will contain all of the info for an individual's profile -->
-<div class='profile'>
-  <!-- syntax and object info needs to be modelled out -->
-  <h2>{{profile.name}}</h2>
-  <img src='profile.img' />
-  <ul>
-    <!-- userType is either dog or walker -->
-    <li>{{profile.userType}}</li>
-    <li>{{profile.location}}</li>
-    <!-- walkType is one of walk, jog, or run -->
-    <li>{{profile.walkType}}</li>
-    <!-- walkTime is one of morning, afternoon, or night -->
-    <li>{{profile.walkTime}}</li>
-  </ul>
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h4>{{profile.name}}</h4></div>
+          <div class="panel-body">
+            <ul id="user-info">
+              <li>User Type: {{profile.type}}</li>
+              <li>Name: {{profile.name}}</li>
+              <li>Address: {{profile.address}}</li>
+              <li>Email: {{profile.email}}</li>
 
-</div>
+            </ul>
+          </div>
+        </div>
+      </div>

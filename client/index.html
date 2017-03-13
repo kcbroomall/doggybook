@@ -1,23 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='doggyBook'>
   <head>
     <meta charset="utf-8" />
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js' />
-    <title>Doggybook</title>
-
+    <title>DoggyBook</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
   </head>
-  <body ng-app='doggyBook'>
-    <div ng-view></div>
+  <body>
+    <nav  ng-controller="AuthController"
+          class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#/">DoggyBook</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/search">Search</a></li>
+            <li><a href="#/profiles">Profile</a></li>
+          </ul>
+        <form name="signinForm"
+              class="navbar-form navbar-right"
+              ng-hide="isSignedIn"
+              ng-submit="signin()">
+          <div class="form-group">
+            <input  type="text" class="form-control" placeholder="Username"
+                    ng-model="user.username">
+          </div>
+          <div class="form-group">
+            <input  type="password" class="form-control" placeholder="Password"
+                    ng-model="user.password">
+          </div>
+          <button type="submit" class="btn btn-success">Signin</button>
+          <a href="#/signup">
+            <button type="submit" class="btn btn-success">Signup</button>
+          </a>
+        </form>
+        <form name="signoutForm"
+              class="navbar-form navbar-right"
+              ng-show="isSignedIn"
+              ng-submit="signout()">
+          <button type="submit" class="btn btn-success">Log Out</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+      <div ng-view></div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcdk5zL6hrYFm8RBBc6_HaQqtnGMCxsKA"></script>
     <script src="auth/auth.js"></script>
-    <script src="./services/services.js"></script>
-    <script src="app.js"></script>
     <script src="dashboard/search.js"></script>
     <script src="profile/profile.js"></script>
-    <script src="landing/landing.js"></script>
+    <script src="services/services.js"></script>
+    <script src="app.js"></script>
   </body>
 
 </html>

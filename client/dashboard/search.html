@@ -1,16 +1,48 @@
-<div>
-  <p> Enter price here!</p>
-  <form  ng-submit='getPlayers()'>
-    <input type='text' ng-model='search.price'
-    placeholder="Enter a desired price here..." />
-    <button type='submit'> Submit</button>
-  </form> <br />
 
-  <div>
-    <ul>
-      <li ng-repeat="users in usersAry|filter:search">
-        {{data.users}}
-      </li>
-    </ul>
+<div class="col-md-12">
+  <div class="panel panel-info">
+    <div class="panel-heading"><h3>DoggyBook Book Perfect Match between Dogs and Walker!</h3></div>
+    <div class="panel-body">
+      <form  ng-submit='getUsers(search)'>
+        <div class="col-md-4">
+          <div class="form-group">
+            <input class="form-control" type='text' ng-model='search.price' placeholder="Desired Price " />
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <input class="form-control" type='text' ng-model='search.zip' placeholder="Zip " />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-info" type='submit'> Search!</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6">
+      <h2 id='user-header'>User List </h2>
+      <div>
+        <ul>
+          <li ng-repeat="user in results" id="user-item">
+            <a href="#/profiles"+"user.name">
+              <!-- <div ng-click="getProf(user.name)"> -->
+                Name: {{user.name}}
+                Address: {{user.address}}
+                Price: $ {{user.price}}
+              <!-- </div> -->
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div> <!-- user list -->
+    <div class="col-md-6 pull-right" ng-controller='SearchController'>
+      <div id="map"> </div> <!-- google map-->
+    </div>
+  </div>

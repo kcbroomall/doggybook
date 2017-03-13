@@ -4,7 +4,8 @@
   "description": "\"Connecting dogs with walkers, book your dog walker!\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "express": "^4.14.0",
     "jwt-simple": "^0.5.1",
     "knex": "^0.12.6",
+    "morgan": "^1.7.0",
     "mysql": "^2.12.0",
     "path": "^0.12.7",
     "q": "^1.4.1",

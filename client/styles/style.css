@@ -1,0 +1,38 @@
+body > .container {
+  padding-top: 80px;
+}
+
+#home{
+  background-image: url(../images/bg1.jpg);
+  background-size: cover;
+  width: 100%;
+  min-height: 755px;
+}
+
+#map{
+  height:500px;
+  width:600px;
+}
+
+#user-header {
+  text-align: center;
+  margin: 0;
+}
+
+#user-item {
+  border: 1px solid grey;
+  margin: 20px;
+  padding: 20px;
+  list-style: none;
+  font-size: 1.5em;
+}
+
+#profile-img {
+  height: 250px;
+  width: 250px;
+}
+
+#user-info {
+  list-style: none;
+  font-size: 1.5em;
+}
